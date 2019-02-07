@@ -30,6 +30,7 @@ class App extends Component {
         value: "weapon-of-choice",
         icon: "fa-android"
       },
+      { label: "DuoApp concept", value: "concept", icon: "fa-fire" },
       { divider: true, label: "Techniek", value: "nav-techniek" },
       {
         label: "Workshops",
@@ -76,6 +77,12 @@ class App extends Component {
       },
       content: [
         {
+          hash: "",
+          type: "page",
+          title: "Introductie",
+          content: "Welkom bij mijn Portfolio website voor SM42"
+        },
+        {
           hash: "home",
           type: "page",
           title: "Introductie",
@@ -92,6 +99,12 @@ class App extends Component {
           type: "iframe",
           content:
             "https://docs.google.com/document/d/1AXaM5NSrXI9KKVz5tLyzFIALY_Gmos-uHIh9vXyaHHQ/preview"
+        },
+        {
+          hash: "concept",
+          type: "iframe",
+          content:
+            "https://docs.google.com/document/d/1pgDH9GcDKq39Pq9hUBUOA_pRbtoy2kvkRYK5dbxPHNs/preview"
         },
         { hash: "tech-workshops", type: "placeholder" },
         { hash: "tech-workshop-1", type: "placeholder" },

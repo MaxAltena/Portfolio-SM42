@@ -5,13 +5,20 @@ class Content extends Component {
   constructor(props) {
     super(props);
 
-    const item = this.props.item;
-    const loading = this.props.item.type === "iframe" ? true : false;
+    const item = {};
+    const loading = false;
+
     this.state = {
       item,
       loading
     };
   }
+
+  componentDidMount = () => {
+    const item = this.props.item;
+    const loading = this.props.item.type === "iframe" ? true : false;
+    this.setState({ item, loading });
+  };
 
   componentDidUpdate = () => {
     if (this.state.item !== this.props.item) {
