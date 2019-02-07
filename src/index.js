@@ -5,7 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter basename="/S4">
+  <BrowserRouter basename="/SM42">
     <Switch>
       <Route exact path="/" component={App} />
       <Route render={() => <Redirect to="/" />} />

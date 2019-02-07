@@ -50,7 +50,7 @@ class Content extends Component {
             <div className="innerContent">
               <div className="page">
                 <div className="innerPage">
-                  <h1 className="hind bold center">Portfolio-S4</h1>
+                  <h1 className="hind bold center">Portfolio-SM42</h1>
                   <h2 className="hind center">Max Altena</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.

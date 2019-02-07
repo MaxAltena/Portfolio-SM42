@@ -47,7 +47,7 @@ class Navigation extends Component {
           >
             {logo}
           </Link>
-          <h1 className="hind bold">Portfolio S4 - Max Altena</h1>
+          <h1 className="hind bold">Portfolio SM42 - Max Altena</h1>
         </div>
         <SideMenu items={items} theme={theme} activeItem={activeItem} />
       </div>
