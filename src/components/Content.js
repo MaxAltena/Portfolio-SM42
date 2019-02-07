@@ -30,6 +30,21 @@ class Content extends Component {
 
   handleLoad = () => {
     this.setState({ loading: false });
+    // let iframe = document.getElementsByTagName("iframe")[0];
+    // let url = iframe.getAttribute("src");
+    // if (url.startsWith("https://docs.google.com/document/d/")) {
+    //   console.log("hi")
+    //   let d = document.createElement("div");
+    //   d.classList.add("embedded-doc");
+    //   iframe.parentElement.replaceChild(d, iframe);
+
+    //   let xhr = new XMLHttpRequest();
+    //   xhr.open("GET", url, true);
+    //   xhr.onload = function() {
+    //     d.innerHTML = xhr.responseText;
+    //   };
+    //   xhr.send();
+    // }
   };
 
   render() {
