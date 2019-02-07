@@ -1,0 +1,55 @@
+{
+  "name": "portfolio-sm42",
+  "description": "Max Altena's portfolio voor de specialisatie route ICT & Smart Mobile",
+  "version": "0.0.1",
+  "keywords": [
+    "react",
+    "app",
+    "max",
+    "altena",
+    "max altena",
+    "portfolio",
+    "smart",
+    "mobile",
+    "smart mobile"
+  ],
+  "private": true,
+  "author": "Max Altena <Max@MaxAltena.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaxAltena/Portfolio-SM42.git"
+  },
+  "homepage": "https://portfolio.maxaltena.com/SM42/",
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.3",
+    "react-sidemenu": "^1.1.0"
+  },
+  "devDependencies": {
+    "ftp-deploy": "^2.3.0",
+    "node-sass-chokidar": "^1.3.4",
+    "npm-run-all": "^4.1.5",
+    "terser": "^3.14.1"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive --use-polling --polling-interval 1000",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm-run-all build-css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

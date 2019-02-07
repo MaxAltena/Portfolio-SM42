@@ -1,0 +1,8 @@
+{
+  "short_name": "Portfolio-S4",
+  "name": "Portfolio semester 4 van Max Altena",
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#039be5",
+  "background_color": "#039be5"
+}
