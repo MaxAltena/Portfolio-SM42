@@ -8,72 +8,56 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // Custom icons / other brand icons
+    // https://github.com/fortunar/react-sidemenu/issues/4
+
     const { hash } = this.props.location;
     const hashStripped = hash.substr(1);
     const sidemenuItems = [
       {
         divider: true,
         label: "Algemeen",
-        value: "algemeen"
+        value: "nav-algemeen"
       },
       {
         label: "Home",
         value: "home",
         icon: "fa-home"
       },
-      { label: "Kennismaking", value: "kennismaking", icon: "fa-comment" },
+      { label: "Over mij", value: "about", icon: "fa-user" },
       {
-        label: "item 2",
-        value: "item2",
-        icon: "fa-award",
+        label: "Weapon of choice",
+        value: "weapon-of-choice",
+        icon: "fa-android"
+      },
+      { divider: true, label: "Techniek", value: "nav-techniek" },
+      {
+        label: "Workshops",
+        value: "tech-workshops",
+        icon: "fa-memory",
         children: [
           {
-            label: "item 2.1",
-            value: "item2.1",
-            icon: "fa-shower",
-            children: [
-              { label: "item 2.1.1", value: "item2.1.1", icon: "fa-bed" },
-              { label: "item 2.1.2", value: "item2.1.2", icon: "fa-bolt" }
-            ]
-          },
-          { label: "item 2.2", value: "item2.2", icon: "fa-bomb" }
+            label: "Workshop 1 - Android introduction",
+            value: "tech-workshop-1"
+          }
         ]
       },
-      {
-        label: "item 3",
-        value: "item3",
-        icon: "fa-bong",
-        children: [
-          {
-            label: "item 3.1",
-            value: "item3.1",
-            icon: "fa-adjust",
-            children: [
-              {
-                label: "item 3.1.1",
-                value: "item3.1.1",
-                icon: "fa-anchor"
-              },
-              {
-                label: "item 3.1.2",
-                value: "item3.1.2",
-                icon: "fa-ankh"
-              }
-            ]
-          },
-          { label: "item 3.2", value: "item3.2", icon: "fa-bath" }
-        ]
-      },
-      { divider: true, label: "Strategie & Concept", value: "nav-SCO" },
-      { label: "Vak", value: "sco1", icon: "fa-beer" },
       {
         divider: true,
-        label: "User Experience & User Centered Design",
-        value: "nav-UXU"
+        label: "User experience",
+        value: "nav-user-experience"
       },
-      { label: "Vak", value: "uxu1", icon: "fa-beer" },
-      { divider: true, label: "Design & Development", value: "nav-DED" },
-      { label: "Vak", value: "ded1", icon: "fa-beer" }
+      {
+        label: "Workshops",
+        value: "ux-workshops",
+        icon: "fa-users",
+        children: [
+          {
+            label: "Workshop 1 - UX introduction",
+            value: "ux-workshop-1"
+          }
+        ]
+      }
     ];
     const validHash = validateHash(hash, sidemenuItems);
 
@@ -91,27 +75,28 @@ class App extends Component {
         activeItem: hashStripped
       },
       content: [
-        { hash: "home", type: "page" },
-
         {
-          hash: "kennismaking",
+          hash: "home",
+          type: "page",
+          title: "Introductie",
+          content: "Welkom bij mijn Portfolio website voor SM42"
+        },
+        {
+          hash: "about",
           type: "iframe",
           content:
-            "https://drive.google.com/file/d/1Bc2B8H6ydJK8YMvnhq9jzdu7EER3EwquZu1oJuO0lxg/preview"
+            "https://docs.google.com/document/d/1mu-9pzo-tCYt2wudpFJeOZjqEg0zHgSwAAB4kxmyltU/preview"
         },
-        { hash: "item2", type: "page" },
-        { hash: "item2.1", type: "page" },
-        { hash: "item2.1.1", type: "page" },
-        { hash: "item2.1.2", type: "page" },
-        { hash: "item2.2", type: "page" },
-        { hash: "item3", type: "page" },
-        { hash: "item3.1", type: "page" },
-        { hash: "item3.1.1", type: "page" },
-        { hash: "item3.1.2", type: "page" },
-        { hash: "item3.2", type: "page" },
-        { hash: "sco1", type: "page" },
-        { hash: "uxu1", type: "page" },
-        { hash: "ded1", type: "page" }
+        {
+          hash: "weapon-of-choice",
+          type: "iframe",
+          content:
+            "https://docs.google.com/document/d/1AXaM5NSrXI9KKVz5tLyzFIALY_Gmos-uHIh9vXyaHHQ/preview"
+        },
+        { hash: "tech-workshops", type: "placeholder" },
+        { hash: "tech-workshop-1", type: "placeholder" },
+        { hash: "ux-workshops", type: "placeholder" },
+        { hash: "ux-workshop-1", type: "placeholder" }
       ]
     };
   }

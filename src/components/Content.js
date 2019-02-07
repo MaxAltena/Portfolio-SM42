@@ -50,36 +50,23 @@ class Content extends Component {
             <div className="innerContent">
               <div className="page">
                 <div className="innerPage">
-                  <h1 className="hind bold center">Portfolio-SM42</h1>
-                  <h2 className="hind center">Max Altena</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio minus, minima commodi ipsa harum officiis laborum
-                    maiores. Eligendi placeat accusamus atque! Praesentium vitae
-                    blanditiis iste animi aspernatur! Consectetur, fugit
-                    reiciendis?
-                  </p>
+                  <h1 className="hind bold center">{item.title}</h1>
+                  <p>{item.content}</p>
                 </div>
               </div>
             </div>
           </main>
         );
         break;
+      case "placeholder":
       default:
         content = (
           <main className="Content">
             <div className="innerContent">
               <div className="page">
                 <div className="innerPage">
-                  <h1 className="hind bold center">Portfolio-S4</h1>
-                  <h2 className="hind center">Max Altena</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio minus, minima commodi ipsa harum officiis laborum
-                    maiores. Eligendi placeat accusamus atque! Praesentium vitae
-                    blanditiis iste animi aspernatur! Consectetur, fugit
-                    reiciendis?
-                  </p>
+                  <h1 className="hind bold center">{item.hash}</h1>
+                  <p>Dit bestaat nog niet!</p>
                 </div>
               </div>
             </div>
