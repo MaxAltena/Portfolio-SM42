@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Loader from "./common/Loader";
+import Splash from "./Content/Splash";
 
 class Content extends Component {
   constructor(props) {
@@ -16,35 +17,34 @@ class Content extends Component {
 
   componentDidMount = () => {
     const item = this.props.item;
-    const loading = this.props.item.type === "iframe" ? true : false;
-    this.setState({ item, loading });
+    if (this.props.item.type !== "iframe") {
+      this.setState({ item, loading: false });
+    } else {
+      this.setState({ item, loading: true });
+    }
   };
 
   componentDidUpdate = () => {
     if (this.state.item !== this.props.item) {
       const item = this.props.item;
-      const loading = this.props.item.type === "iframe" ? true : false;
-      this.setState({ item, loading });
+      if (this.props.item.type !== "iframe") {
+        setTimeout(() => {
+          this.setState({ loading: true });
+        }, 0);
+        setTimeout(() => {
+          this.setState({ item });
+        }, 300);
+        setTimeout(() => {
+          this.setState({ loading: false });
+        }, 600);
+      } else {
+        this.setState({ item, loading: true });
+      }
     }
   };
 
   handleLoad = () => {
     this.setState({ loading: false });
-    // let iframe = document.getElementsByTagName("iframe")[0];
-    // let url = iframe.getAttribute("src");
-    // if (url.startsWith("https://docs.google.com/document/d/")) {
-    //   console.log("hi")
-    //   let d = document.createElement("div");
-    //   d.classList.add("embedded-doc");
-    //   iframe.parentElement.replaceChild(d, iframe);
-
-    //   let xhr = new XMLHttpRequest();
-    //   xhr.open("GET", url, true);
-    //   xhr.onload = function() {
-    //     d.innerHTML = xhr.responseText;
-    //   };
-    //   xhr.send();
-    // }
   };
 
   render() {
@@ -69,13 +69,26 @@ class Content extends Component {
       case "page":
         content = (
           <main className="Content">
-            <div className="innerContent">
-              <div className="page">
-                <div className="innerPage">
-                  <h1 className="hind bold center">{item.title}</h1>
-                  <p>{item.content}</p>
+            {loading ? <Loader /> : null}
+            <div className={`innerContent ${loading ? "loading" : "loaded"}`}>
+              <div className="outerPage">
+                <div className="page">
+                  <div className="innerPage">
+                    <h1 className="hind bold center">{item.title}</h1>
+                    <p>{item.content}</p>
+                  </div>
                 </div>
               </div>
+            </div>
+          </main>
+        );
+        break;
+      case "splash":
+        content = (
+          <main className="Content">
+            <div className={`innerContent ${loading ? "loading" : "loaded"}`}>
+              {loading ? <Loader /> : null}
+              <Splash />
             </div>
           </main>
         );
@@ -84,11 +97,14 @@ class Content extends Component {
       default:
         content = (
           <main className="Content">
-            <div className="innerContent">
-              <div className="page">
-                <div className="innerPage">
-                  <h1 className="hind bold center">{item.hash}</h1>
-                  <p>Dit bestaat nog niet!</p>
+            {loading ? <Loader /> : null}
+            <div className={`innerContent ${loading ? "loading" : "loaded"}`}>
+              <div className="outerPage">
+                <div className="page">
+                  <div className="innerPage">
+                    <h1 className="hind bold center">{item.hash}</h1>
+                    <p>Aan deze pagina wordt nog gewerkt!</p>
+                  </div>
                 </div>
               </div>
             </div>

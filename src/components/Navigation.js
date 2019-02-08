@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import SideMenu from "react-sidemenu";
+import SideMenu from "./Navigation/SideMenu.js";
 import Logo from "../assets/Logo";
 
 class Navigation extends Component {
@@ -48,8 +48,43 @@ class Navigation extends Component {
             {logo}
           </Link>
           <h1 className="hind bold">Portfolio SM42 - Max Altena</h1>
+          <div>
+            <a
+              href="https://maxaltena.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa fa-globe" />
+            </a>
+            <a
+              href="https://github.com/MaxAltena/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-github" />
+            </a>
+            <a
+              href="https://codepen.io/MaxAltena/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-codepen" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/MaxAltena/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin" />
+            </a>
+          </div>
         </div>
-        <SideMenu items={items} theme={theme} activeItem={activeItem} />
+        <SideMenu
+          items={items}
+          theme={theme}
+          activeItem={activeItem}
+          shouldTriggerClickOnParents={true}
+        />
       </div>
     );
   }

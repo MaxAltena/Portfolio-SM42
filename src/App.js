@@ -8,9 +8,6 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // Custom icons / other brand icons
-    // https://github.com/fortunar/react-sidemenu/issues/4
-
     const { hash } = this.props.location;
     const hashStripped = hash.substr(1);
     const sidemenuItems = [
@@ -28,7 +25,7 @@ class App extends Component {
       {
         label: "Weapon of choice",
         value: "weapon-of-choice",
-        icon: "fa-android"
+        icon: "fab-android"
       },
       { label: "DuoApp concept", value: "concept", icon: "fa-fire" },
       { divider: true, label: "Techniek", value: "nav-techniek" },
@@ -78,15 +75,11 @@ class App extends Component {
       content: [
         {
           hash: "",
-          type: "page",
-          title: "Introductie",
-          content: "Welkom bij mijn Portfolio website voor SM42"
+          type: "splash"
         },
         {
           hash: "home",
-          type: "page",
-          title: "Introductie",
-          content: "Welkom bij mijn Portfolio website voor SM42"
+          type: "splash"
         },
         {
           hash: "about",

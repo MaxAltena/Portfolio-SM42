@@ -4,6 +4,7 @@
   width: auto;
   flex-grow: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
 
   iframe {
@@ -22,18 +23,28 @@
     left: calc(50% - 18px);
   }
 
-  .innerContent {
+  .outerPage {
     margin: 10px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    transition: opacity 0.3s ease-in-out;
+    &.loading {
+      opacity: 0;
+    }
+    &.loaded {
+      opacity: 1;
+    }
+
     .page {
-      box-shadow: 0 4px 15px 2px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 0.15);
       background: $white;
       color: $black;
-      width: 57vw;
-      height: 74vw;
+      $size: 1.08;
+      width: calc(595px * #{$size});
+      max-width: calc(100vw - 350px);
+      height: calc(842px * #{$size});
       position: relative;
 
       .innerPage {
@@ -48,31 +59,108 @@
   }
 
   &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    height: 16px;
     overflow: visible;
+    width: 16px;
   }
+
   &::-webkit-scrollbar-button {
     height: 0;
     width: 0;
   }
-  &::-webkit-scrollbar-corner {
-    background: transparent;
-  }
+
   &::-webkit-scrollbar-track {
-    background-color: #333333 !important;
-    border: none !important;
-    border-radius: 0px !important;
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 0 0 0 4px;
   }
+
+  &::-webkit-scrollbar-track:horizontal {
+    border-width: 4px 0 0;
+  }
+
   &::-webkit-scrollbar-track:hover {
-    background-color: #333333 !important;
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track:horizontal:hover {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track:active {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.14),
+      inset -1px 0 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &::-webkit-scrollbar-track:horizontal:active {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.14),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07);
   }
   &::-webkit-scrollbar-thumb {
-    background: #4b4b4b !important;
-    border: none !important;
-    border-radius: 0px !important;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 1px 1px 1px 6px;
+    min-height: 28px;
+    padding: 100px 0 0;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07);
   }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-width: 6px 1px 1px;
+    padding: 0 0 0 100px;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+      inset -1px 0 0 rgba(0, 0, 0, 0.07);
+  }
+
   &::-webkit-scrollbar-thumb:hover {
-    background: #5a5a5a;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35);
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    margin: 0 4px;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    box-shadow: none;
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-style: solid;
+    border-color: transparent;
+    border-width: 4px;
+    background-color: #dadce0;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #80868b;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #5f6368;
+  }
+}
+
+.Splash {
+  background: $nav-background-color;
+  > div {
+    width: 100%;
+    min-height: 100vh;
+    canvas {
+      display: block;
+    }
   }
 }
