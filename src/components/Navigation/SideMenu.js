@@ -454,7 +454,11 @@ var SideMenu = (function(_Component) {
             item.label,
             " "
           ),
-          this.renderChevron(item, rtl)
+          item.type === "external" &&
+            _react2.default.createElement("i", {
+              className: "fa fa-external-link-alt item-icon"
+            }),
+          item.children && this.renderChevron(item, rtl)
         );
       }
     },
@@ -467,23 +471,21 @@ var SideMenu = (function(_Component) {
           return _react2.default.createElement(
             "div",
             { key: item.value, className: "divider divider-level-" + level },
-            item.label
+            this.handleRenderMenuItemContent(item)
           );
         }
+        if (item.hidden) return;
         return _react2.default.createElement(
           "div",
           {
             key: item.value,
             className:
-              "waves-effect waves-light item item-level-" +
-              level +
-              " " +
-              (item.active ? "active" : "")
+              "item item-level-" + level + " " + (item.active ? "active" : "")
           },
           _react2.default.createElement(
             "div",
             {
-              className: "item-title",
+              className: "waves-effect waves-light item-title",
               onClick: this.onItemClick(item)
             },
             this.handleRenderMenuItemContent(item)
