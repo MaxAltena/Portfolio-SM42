@@ -32,7 +32,7 @@
     "divider": true,
     "label": "DuoApp – SocialKit",
     "value": "nav-duoapp",
-    "icon": "fa-fire"
+    "icon": "fa-toolbox"
   },
   {
     "label": "Concept",
@@ -51,21 +51,19 @@
   },
   {
     "divider": true,
-    "label": "Techniek",
-    "value": "nav-techniek",
+    "label": "Tech",
+    "value": "nav-tech",
     "icon": "fa-memory"
   },
   {
-    "label": "Workshops [DEV]",
+    "label": "Workshops",
     "value": "tech-workshops",
-    "type": "page",
-    "content": "Hier komt nog wat leuks",
     "children": [
       {
-        "label": "Workshop 1 - Android introduction [DEV]",
+        "label": "Workshop 1 - Android introduction",
         "value": "tech-workshop-1",
         "type": "page",
-        "content": "Hier komen nog leuke dingen over deze workshop"
+        "content": "TBD"
       }
     ]
   },
@@ -79,21 +77,41 @@
   },
   {
     "divider": true,
-    "label": "User experience",
-    "value": "nav-user-experience",
+    "label": "User Experience",
+    "value": "nav-ux",
     "icon": "fa-user-astronaut"
   },
   {
-    "label": "Workshops [DEV]",
+    "label": "Workshops",
     "value": "ux-workshops",
-    "type": "page",
-    "content": "Hier komt nog wat leuks",
     "children": [
       {
-        "label": "Workshop 1 - UX introduction [DEV]",
+        "label": "Workshop 1 - User Goals",
         "value": "ux-workshop-1",
-        "type": "page",
-        "content": "Hier komen nog leuke dingen over deze workshop"
+        "type": "iframe",
+        "title": "Document over User Goals",
+        "content": "https://docs.google.com/document/d/1YGvhTWIVQL2py965C8LVQnDzh09M_a4Jb7oGeW5ldPA/"
+      },
+      {
+        "label": "Workshop 2 - Meaningful Experience",
+        "value": "ux-workshop-2",
+        "type": "iframe",
+        "title": "Document over Meaningful Experience",
+        "content": "https://docs.google.com/document/d/1nTeBn7sAgY38-qwaRTP3n-tNDNCpDlafWlFcgkjZJd8/"
+      },
+      {
+        "label": "Workshop 3 - Use Cases",
+        "value": "ux-workshop-3",
+        "type": "iframe",
+        "title": "Document over Use Cases",
+        "content": "https://docs.google.com/document/d/1T-UJkAzTIc0_i9imPy3ssiUNMVrb0-gENBUy-JBA7Z0/"
+      },
+      {
+        "label": "Workshop 4 - Gamification",
+        "value": "ux-workshop-4",
+        "type": "iframe",
+        "title": "Document over Gamification",
+        "content": "https://docs.google.com/document/d/15yOIhTRhRWXGMHdbYAcYEUMVmYnuHuJFiAD7UdHzlaE/"
       }
     ]
   }

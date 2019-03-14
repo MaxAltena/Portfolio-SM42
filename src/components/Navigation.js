@@ -79,12 +79,7 @@ class Navigation extends Component {
             </a>
           </div>
         </div>
-        <SideMenu
-          items={items}
-          theme={theme}
-          activeItem={activeItem}
-          shouldTriggerClickOnParents={true}
-        />
+        <SideMenu items={items} theme={theme} activeItem={activeItem} />
       </div>
     );
   }
