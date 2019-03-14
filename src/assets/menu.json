@@ -30,7 +30,7 @@
   },
   {
     "divider": true,
-    "label": "DuoApp – Hotname",
+    "label": "DuoApp – SocialKit",
     "value": "nav-duoapp",
     "icon": "fa-fire"
   },
@@ -38,7 +38,7 @@
     "label": "Concept",
     "value": "duoapp-concept",
     "type": "iframe",
-    "title": "Document over Hotname",
+    "title": "Document over SocialKit",
     "content": "https://docs.google.com/document/d/1pgDH9GcDKq39Pq9hUBUOA_pRbtoy2kvkRYK5dbxPHNs/"
   },
   {
