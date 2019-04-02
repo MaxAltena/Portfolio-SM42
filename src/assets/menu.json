@@ -56,14 +56,29 @@
     "icon": "fa-memory"
   },
   {
-    "label": "Workshops",
-    "value": "tech-workshops",
+    "label": "Weekly progress",
+    "value": "tech-weekly",
     "children": [
       {
-        "label": "Workshop 1 - Android introduction",
-        "value": "tech-workshop-1",
-        "type": "page",
-        "content": "TBD"
+        "label": "Week 1 - Android introduction",
+        "value": "tech-week1",
+        "type": "external",
+        "title": "GitHub repo van week 1",
+        "content": "https://github.com/MaxAltena/SM42/tree/master/Week1"
+      },
+      {
+        "label": "Week 2 - Android hardware",
+        "value": "tech-week2",
+        "type": "external",
+        "title": "GitHub repo van week 2",
+        "content": "https://github.com/MaxAltena/SM42/tree/master/Week2"
+      },
+      {
+        "label": "Week 4 - Android and Firebase",
+        "value": "tech-week4",
+        "type": "external",
+        "title": "GitHub repo van week 4",
+        "content": "https://github.com/MaxAltena/SM42/tree/master/Week4"
       }
     ]
   },
