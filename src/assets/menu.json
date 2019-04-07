@@ -42,6 +42,13 @@
     "content": "https://docs.google.com/document/d/1pgDH9GcDKq39Pq9hUBUOA_pRbtoy2kvkRYK5dbxPHNs/"
   },
   {
+    "label": "Design document",
+    "value": "duoapp-design-document",
+    "type": "iframe",
+    "title": "Design document",
+    "content": "https://docs.google.com/document/d/1zU7tN2fgpKnRwMi_bu88gyU2PLqw-xMQP7pWJL9_z1E/"
+  },
+  {
     "label": "GitHub",
     "value": "duoapp-github",
     "icon": "fab-github",
